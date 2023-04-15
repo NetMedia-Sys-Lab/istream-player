@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: Ansari
+    given-names: Akram
+    orcid: https://orcid.org/0009-0005-0172-3416
+title: "IStream Player"
+version: 0.3.0
+date-released: 2023-04-15
