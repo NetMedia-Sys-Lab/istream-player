@@ -1,0 +1,40 @@
+version: "3.9"
+services:
+
+  client:
+    image: headless_player:latest
+    #    build: .
+    command: --config-file /run/config.json --run-dir /run
+    depends_on:
+      - server
+    volumes:
+      - ${runDir}:/run:rw
+      - ${SSLKEYLOGFILE}:/host/ssl_keylog.txt:rw
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      PYTHONUNBUFFERED: 1
+      SSLKEYLOGFILE: /host/ssl_keylog.txt
+    # networks:
+    #   - default
+    #   - docker-elk_elk
+
+  server:
+    image: ${serverImage}
+    cap_add:
+      - NET_ADMIN
+    # environment:
+    #   HOST_UID: ${UID}
+    volumes:
+      - ${DATASET_DIR}:/etc/nginx/html:ro
+      - ${runDir}:/run:rw
+
+networks:
+  # docker-elk_elk:
+  #   external: true
+
+  default:
+    internal: true
+    ipam:
+      config:
+        - subnet: 172.16.${NETWORK_ID}.0/24
+

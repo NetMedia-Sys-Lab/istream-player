@@ -1,0 +1,8 @@
+player:
+  buffer-settings:
+    buffer_duration: 13
+    safe_buffer_level: 11
+    panic_buffer_level: 9.5
+    min_rebuffer_duration: 9
+    min_start_duration: 9
+  downloader: quic

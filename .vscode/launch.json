@@ -1,0 +1,24 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "iplay-main",
+            "type": "python",
+            "request": "launch",
+            "program": "istream_player/main.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--input", "/home/akram/ucalgary/research/istream-player/dataset/videos/av1-1sec/Aspen/output.mpd",
+                "--verbose",
+                "--mod_analyzer", "playback"
+            ],
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}${pathSeparator}${env:PYTHONPATH}"
+            }
+            // "justMyCode": true
+        }
+    ]
+}

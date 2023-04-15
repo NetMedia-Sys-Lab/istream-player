@@ -1,0 +1,8 @@
+player:
+  buffer-settings:
+    buffer_duration: 5
+    safe_buffer_level: 4
+    panic_buffer_level: 1.5
+    min_rebuffer_duration: 2
+    min_start_duration: 2
+  downloader: tcp

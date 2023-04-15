@@ -1,0 +1,11 @@
+
+stages:
+  - test
+
+unit-test-job:
+  image: python:3
+  stage: test
+  script:
+    - pip install .
+    - pip freeze
+    - python -m pytest ./tests/*
